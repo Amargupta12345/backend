@@ -30,7 +30,7 @@ mongoose
 
 //api creation if an endpoint  
 
-app.use("/api/pins", pinRouter);
+// app.use("/api/pins", pinRouter);
 
 app.use("/api/users", userRouter);
 
