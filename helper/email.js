@@ -20,7 +20,7 @@ exports.sendVerificationMail = function (userData, url) {
         html: `<h3>Welcome ${userData.username}.</h3> <p>Please verify your account by clicking on the link <a href=${url}>verify</a></p>`,
       },
       function (err, info) {
-        // console.log(err, info);
+      
         if (err) {
           reject(err);
         } else {

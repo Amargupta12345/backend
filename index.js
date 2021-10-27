@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(__dirname +"./uploads/"));
 app.use(cors());
 
-const PORT = process.env.PORT || 8000;
+const PORT =  8000;
 
 dotenv.config();
 
