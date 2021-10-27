@@ -25,7 +25,7 @@ exports.Register = async (req, res) => {
         if (err) {
           res.status(500).send({ message: "Error While Token Generation" });
         } else {
-          let url = `${req.protocol}://${req.hostname}/user/verify/?token=${token}`;
+          let url = `${req.protocol}://${req.hostname}/api/users/verify/?token=${token}`;
           if (req.hostname === "localhost") {
             url = `http://localhost:8000/api/users/verify/?token=${token}`;
           }
