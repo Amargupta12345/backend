@@ -30,10 +30,15 @@ exports.Register = async (req, res) => {
             url = `http://localhost:8000/api/users/verify/?token=${token}`;
           }
 
-          const newemail = await email.sendVerificationMail(req.body, url);
-          await newUser.save();
-
-          res.status(200).json({ message: "please verfiy the email" });
+          await email
+            .sendVerificationMail(req.body, url)
+            .then(async (result) => {
+              await newUser.save();
+              res.status(200).json({ message: "please verfiy the email" });
+            })
+            .catch((err) => {
+              res.status(200).json({ message: "error" });
+            });
         }
       }
     );
